@@ -5,9 +5,6 @@ import SearchForm from './SearchForm'
 
 class ProviderContainer extends React.Component {
 
-  //  //https://cors-anywhere.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?version=2.1&first_name=
-
-
   render() {
     return (
       <div className="provider-container">
@@ -20,4 +17,6 @@ class ProviderContainer extends React.Component {
 
 export default ProviderContainer;
 
-//need to figure out how to get these two children components to talk to each other
+//need to figure out how to get these two children components to talk to each other, or should
+//I refactor so the majority of the functions from SearchForm are inside here
+//and I pass them down as props?

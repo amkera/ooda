@@ -65,7 +65,7 @@ class Search extends React.Component {
     console.log(results)
     {results.map(provider => {
       <div>
-        
+
       </div>
     })}
 
