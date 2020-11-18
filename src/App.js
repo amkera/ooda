@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
-import SearchForm from './searchForm'
-import Header from './Header';
+import React from 'react';
+import SearchForm from './components/SearchForm'
 
+class App extends React.Component {
 
-class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     data: [],
-  //   };
-  // }
+  //  //https://cors-anywhere.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?version=2.1&first_name=
+
 
   render() {
     return (
       <div className="App">
-        <Header />
         <SearchForm />
       </div>
     )
   }
-
 }
 
 export default App;
