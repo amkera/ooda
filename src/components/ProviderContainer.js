@@ -19,3 +19,5 @@ class ProviderContainer extends React.Component {
 }
 
 export default ProviderContainer;
+
+//need to figure out how to get these two children components to talk to each other
