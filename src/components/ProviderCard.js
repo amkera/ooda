@@ -8,7 +8,7 @@ class ProviderCard extends React.Component {
   render() {
     return (
       <div className="provider-card">
-        
+
       </div>
     )
   }
