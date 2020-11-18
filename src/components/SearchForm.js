@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import ProviderCard from './ProviderCard'
 //sends JSON back
 
 class Search extends React.Component {
@@ -62,18 +63,14 @@ class Search extends React.Component {
   renderSearchResults = () => {
     const results = this.state.results;
     console.log(results)
-
-    return (
-      <div className="results-container">
-        {results.map(providerObj => {
-          return (
-            <div key={providerObj.number}className='provider-card'>
-              Addresses: {}
-            </div>
-          )
-        })}
+    {results.map(provider => {
+      <div>
+        
       </div>
-    )
+    })}
+
+    //need to use ProviderCard component to render to the DOM somehow
+    //or can I do it from here?
   }
 
   render() {
