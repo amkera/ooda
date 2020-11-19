@@ -47,7 +47,6 @@ class Search extends React.Component {
         loading: false,
         message: 'data found'
       })
-      this.renderSearchResults()
     })
   }
   //name / org name, npi number, addresses, and practice locations.
@@ -61,16 +60,30 @@ class Search extends React.Component {
   }
 
   renderSearchResults = () => {
+
     const results = this.state.results;
-    console.log(results)
-    {results.map(provider => {
-      <div>
 
-      </div>
-    })}
+    if (Object.keys(results).length && results.length) {
+      return (
+        <div className="results-container">
+          {results.map(result => {
+            return (
+              <ul key={result.number} className="provider-item">
+                <h5>
+                  First Name: {result["basic"]["first_name"]}
+                  Last Name: {result["basic"]["last_name"]}
+                  NPI Number: {result["number"]}
+                  Addresses: {result["addresses"].forEach(address => <li> {address["address_1"]} </li> )}
+                  Practice Locations: {result["addresses"]["city"]}, {result["addresses"]["state"]}
+                </h5>
+              </ul>
+            )
+          })}
 
-    //need to use ProviderCard component to render to the DOM somehow
-    //or can I do it from here?
+        </div>
+      )
+    }
+
   }
 
   render() {
@@ -116,6 +129,8 @@ class Search extends React.Component {
           <input type="submit" />
 
         </form>
+
+        {this.renderSearchResults()}
 
       </div>
     )
