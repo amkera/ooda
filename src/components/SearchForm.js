@@ -62,6 +62,7 @@ class Search extends React.Component {
   renderSearchResults = () => {
 
     const results = this.state.results;
+    console.log(results)
 
     if (Object.keys(results).length && results.length) {
       return (
@@ -70,12 +71,18 @@ class Search extends React.Component {
             return (
               <ul key={result.number} className="provider-item">
                 <h5>
-                  First Name: {result["basic"]["first_name"]}
-                  Last Name: {result["basic"]["last_name"]}
-                  NPI Number: {result["number"]}
-                  Addresses: {result["addresses"].forEach(address => <li> {address["address_1"]} </li> )}
-                  Practice Locations: {result["addresses"]["city"]}, {result["addresses"]["state"]}
+                  <p> First Name: {result["basic"]["first_name"]} </p>
+                  <p> Last Name: {result["basic"]["last_name"]}  </p>
+                  <p> NPI Number: {result["number"]} </p>
+                  <p> Addresses: {result["addresses"].forEach(address => (
+                                <li> { address.country_code } </li>
+                             ))}</p>
+
+                  <p> Practice Locations: </p>
+                  <p> URL: <a href={`https://npiregistry.cms.hhs.gov/registry/search-results-table?number=${result["number"]}&addressType=ANY`}>Link to NPI Registry</a> </p>
+
                 </h5>
+                <br/>
               </ul>
             )
           })}
